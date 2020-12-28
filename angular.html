@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="app1">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angular JS Tutorial</title>
+</head>
+<body>
+    <div ng-controller = "ctrl1">
+        <span>Values: </span>
+        <input type= "text" ng-model= "first" />
+        <input type= "text" ng-model= "second" />
+
+        <button ng-click="updateValue()"> Sum </button>
+        <br><br>
+
+        <h1> {{calculation}} </h1>
+        
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <script src="App.js"></script>
+</body>
+</html>
