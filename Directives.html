@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app>
+    <head>
+        <title>Section 2- Views, Directives & Filters</title>
+        <link rel="stylesheet" href="bootstrap.min.css">
+    </head>
+    <body>
+        <div ng-init= 'Course=
+            {
+                title: "Master JavaScript & JQuery",
+                description: "Learn JavaScript & jQuery",
+                image: "Master-JavaScript.jpg",
+                price: 20,
+                author: "SkillBakery.com",
+                published:true
+            }'>
+            <div> {{Course.title}} </div>
+            <input type= "text" ng-model="Course.description" />
+            <div> {{Course.description}} </div>
+        </div>
+        <script src= "directives.js"></script>
+    </body>
+</html>
