@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+    <meta charset="utf-8"> 
+    <title>Course Details - Exploring Filters & More</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="custom.css">
+</head>
+<body ng-init='Courses = 
+             [
+                {
+                 title: "Master JavaScript & jQuery",
+                 description: "Learn JavaScript & jQuery",
+                 image: "Master-JavaScript.jpg",
+                 price: 20,
+                 author: "SkillBakery.com",
+                 published:true,
+                 courseUrl:"https://www.udemy.com/master-javascript-jquery/",
+                 CourseID:1
+                },
+                {
+                 title: "Master KnockoutJS",
+                 description: "Learn KnockoutJS",
+                 image: "Master-Knockout.jpg",
+                 price: 39,
+                 author: "SkillBakery.com",
+                 published:true,
+                 courseUrl:"https://www.udemy.com/master-knockoutjs-javascript/",
+                CourseID:2
+                },
+                {
+                 title: "AWS LAMP Setup",
+                 description: "Learn JavaScript & jQuery",
+                 image: "AWS-LAMP.jpg",
+                 price: 50,
+                 author: "SkillBakery.com",
+                 published:true,
+                 courseUrl:"https://www.udemy.com/amazon-web-services-lamp-setup-step-by-step/",
+                  CourseID:3
+                },
+                {
+                 title: "Advanced jQuery",
+                 description: "Learn JavaScript & jQuery",
+                 image: "Advanced-jQuery.jpg",
+                 price: 10,
+                 author: "SkillBakery.com",
+                 published:true,
+                 courseUrl:"https://www.udemy.com/advanced-jquery-tips-tricks-for-developers-designers/",
+                    CourseID:4
+                }
+            ]'>
+    <div class="navbar navbar-fixed-top navbar-inverse">
+      <div class="navbar-inner">
+            <div class="container">
+                <a href="#" class="brand">SkillBakery</a>
+                <div class="nav-collapse collapse navbar-responsive-collapse">
+                    <ul class="nav">
+                        <li><a href="#">Home</a></li>
+                        <li class="dropdown">
+                            <a href="#" data-toggle="dropdown" class="dropdown-toggle">Courses <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                 <li ng-repeat="Course in Courses"><a target="_blank" href="{{ Courses[0].courseUrl  }}">{{ Courses[0].title }}</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <form action="#" class="navbar-search pull-left">
+                        <input type="text" placeholder="Search &hellip;" class="search-query">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="span5">
+                <img ng-src="{{ Courses[0].image }}" class="img-polaroid" alt="Sample Image" style="width: 320px;height: 300px;">
+            </div>
+            <div class="span7">
+                {{ '128812312323' | date:'MM/dd/yyyy @ h:mma' }}
+                <h2>{{ Courses[0].title | uppercase }}</h5>
+                <h4 class="muted">{{ Courses[0].description  | lowercase }}</h4>
+                <hr>
+                <h3>Price - {{ Courses[0].price | currency }} </h3>
+                <br>
+                <p><a href="{{ Courses[0].courseUrl }}" class="btn btn-success btn-large" target="_blank">Purchase Now</a></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="span12">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a data-toggle="tab" href="#tab-1">Course Description</a></li>
+                    <li><a data-toggle="tab" href="#tab-2">Reviews</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div id="tab-1" class="tab-pane fade in active">
+                        <table class="table table-striped">
+                            <tbody>
+                                <tr>
+                                    <th>Description</th>
+                                    <td>{{ Courses[0].description }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Author</th>
+                                    <td>{{ Courses[0].author }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="tab-2" class="tab-pane fade">
+                        <table class="table table-striped">
+                            <tbody>
+                                <tr>
+                                    <td>Reviews will come later</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer section -->
+    <div class="container">
+        <hr>
+        <div class="row">
+            <div class="span12">
+                <p class="pull-left">Copyright &copy; 2015 SkillBakery. All Right Reserved</p>
+            </div>
+        </div>
+    </div>
+    <script src="http://code.jquery.com/jquery.min.js"></script>
+    <script src="scripts/bootstrap.min.js"></script>
+    <script src="angular.js"></script>
+</body>
+</html>
